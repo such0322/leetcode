@@ -8,14 +8,17 @@ import (
 func main() {
 	var root *BinaryTree.TreeNode
 	root = &BinaryTree.TreeNode{}
-	root.Val = 3
-	root.Left = &BinaryTree.TreeNode{Val: 9, Left: nil, Right: nil}
-	root.Left.Left = &BinaryTree.TreeNode{Val: 6, Left: nil, Right: nil}
+	root.Val = 4
+
+	root.Left = &BinaryTree.TreeNode{}
+	root.Left.Val = 2
+	root.Left.Left = &BinaryTree.TreeNode{Val: 3, Left: nil, Right: nil}
+	root.Left.Right = &BinaryTree.TreeNode{Val: 5, Left: nil, Right: nil}
 
 	root.Right = &BinaryTree.TreeNode{}
-	root.Right.Val = 20
-	root.Right.Left = &BinaryTree.TreeNode{Val: 15, Left: nil, Right: nil}
+	root.Right.Val = 9
+	root.Right.Left = &BinaryTree.TreeNode{Val: 0, Left: nil, Right: nil}
 	root.Right.Right = &BinaryTree.TreeNode{Val: 7, Left: nil, Right: nil}
-	aa := BinaryTree.LevelOrder(root)
+	aa := BinaryTree.FindTilt(root)
 	fmt.Println(aa)
 }
